@@ -23,12 +23,14 @@ class TwoPaneApp(App):
     #list_pane {
         width: 30%;
         border: solid $primary;
+        border-title: "Account Name";
     }
     
     #info_pane {
         width: 70%;
         border: solid $primary;
         padding: 1;
+        border-title: "Info. Press Q to quit"
     }
     #main_content {
         height: 100%;
@@ -116,8 +118,10 @@ class TwoPaneApp(App):
             if not working:
                 info_pane.update('Could not get creds.')
             else:
-                info_pane.update('WE HAVE CREDENTIONS')
+                info_pane.update('WE HAVE CREDENTIALS')
                 self.set_default_profile(selected_account)
+                self.exit()
+
 
 if __name__ == "__main__":
     TwoPaneApp().run()
